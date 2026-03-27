@@ -18,7 +18,8 @@ public class DeptService {
     public List<Dept> findAll() {
         return deptRepository.findAll();
     }
-
+    
+    @Transactional
 	public Dept save(Dept dept) {
 		return deptRepository.save(dept);
 	}
