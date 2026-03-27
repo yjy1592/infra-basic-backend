@@ -10,13 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/depts")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class DeptController {
 
     private final DeptService deptService;
 
-    @GetMapping
+    @GetMapping("/backend")
+    public String getApi() {
+        return "backend";
+    }
+    
+    @GetMapping("/depts")
     public List<Dept> getAll() {
         return deptService.findAll();
     }
